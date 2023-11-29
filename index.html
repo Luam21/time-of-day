@@ -57,3 +57,59 @@
  </script>
 </body>
 </html>
+Afternoon (12 noon to 6pm)
+		Evening (6pm to 11pm)
+		Night (11pm to 5am)
+		Criteria: The three items above (color, image, message) must be unique for each of the 4 time periods of the day.
+	*/
+ 
+ 
+ 
+ 	let myDate = new Date();
+	let myHour = myDate.getHours();
+	let myGreeting = "";
+	let myColor = "";
+	let myPic = "";
+
+	//PUT IN PLACE FOR TESTING - REMOVE LINE BELOW!!
+	myHour = 1;
+	//myHour = 1;
+
+	if(myHour > 5 && myHour < 12){//morning
+		myGreeting = "Good Morning!";
+		myColor = "#B1755A";
+		myPic = " sunrise.jpg";
+	}else if(myHour > 12 && myHour < 18){//afternoon
+		myGreeting = "Good Afternoon!";
+		myColor = "#98C9EB";
+		myPic = "afternoon.jpg";
+	}else if(myHour > 18 && myHour < 23){//evening
+		myGreeting = "Good Evening!"
+		myColor = "#FFD0AA"
+		myPic = "sunset.jpg"
+	}else{//night
+		myGreeting = "Good Night!";
+		myColor = "#3B464D";
+		myPic = "midnight.jpg";
+	}
+	//pre-pend the images path
+	myPic = "images/" + myPic;
+	
+	
+	//custom message
+	document.getElementById("my-greeting").innerHTML = myGreeting;
+ 
+ 
+	//custom color
+	document.querySelector("html").style.backgroundColor = myColor;
+	//custom pic
+	document.getElementById("my-pic").src = myPic;
+ 
+ 
+ 
+ 
+ 	document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+    document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);  
+ </script>
+</body>
+</html>
